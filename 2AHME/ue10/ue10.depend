@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1585307184 source:c:\users\phili\desktop\ue10\main.c
+	<stdio.h>
+	<stdlib.h>
+
