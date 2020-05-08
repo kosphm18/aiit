@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+C:\Users\phili\Desktop\Schule\AIIT\ue12_Stern-Dreieck-Transformation\ue12_Stern-Dreieck-Transformation.cbp
 int wandleDreieckInStern(double rab, double rac, double rbc, double *pRa, double *pRb, double *pRc){
 
     double pruefe = rac + rab + rbc;
