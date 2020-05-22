@@ -44,10 +44,10 @@ int testDreieckInStern(double rab, double rac, double rbc,
     } else {
         if (istGleich(cRa, ra, eps) && istGleich(cRb, rb, eps) && istGleich(cRc, rc, eps)) {
           printf("OK:  ");
-    } else {
+        } else {
           printf("ERR:  ");
           rv = 1;
-    }
+        }
         printf("rab=%lf, rac=%lf, rbc=%lf -> ra=%lf, rb=%lf, rc=%lf\n",
               rab, rac, rbc, cRa, cRb, cRc);
     }
@@ -65,10 +65,10 @@ int testSternInDreieck(double ra, double rb, double rc,
     } else {
         if (istGleich(cRab, rab, eps) && istGleich(cRac, rac, eps) && istGleich(cRbc, rbc, eps)) {
           printf("OK:  ");
-    } else {
+        } else {
           printf("ERR:  ");
           rv = 1;
-    }
+        }
         printf("rab=%lf, rac=%lf, rbc=%lf -> ra=%lf, rb=%lf, rc=%lf\n",
                 cRab, cRac, cRbc, ra , rb, rc);
     }
@@ -88,11 +88,11 @@ int testNULL() {
             case 4: rvc = wandleDreieckInStern(1, 1, 1, &ra, NULL, &rc); break;
             case 5: rvc = wandleDreieckInStern(1, 1, 1, &ra, &rb, NULL); break;
 
-    }
+        }
         if (rvc == 0) {
             rv++;
             printf("Fehler bei i = %d\n", i);
-    }
+        }
     }
     if (rv == 0) {
         printf("OK: ");
@@ -114,11 +114,11 @@ int testKleinerGleichNull() {
             case 4: rvc = wandleDreieckInStern(1, -1, 1, &ra, &rb, &rc); break;
             case 5: rvc = wandleDreieckInStern(1, 1, -1, &ra, &rb, &rc); break;
 
-    }
+        }
         if (rvc == 0) {
             rv++;
             printf("Fehler bei i = %d\n", i);
-    }
+        }
     }
     if (rv <= 0) {
         printf("OK: ");
