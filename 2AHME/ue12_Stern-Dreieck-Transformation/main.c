@@ -138,30 +138,43 @@ int testKleinerGleichNull() {
 }
 
 int pruefe1000Mal () {
-  double ra;
-  double rab;
-  double rbc;
-  double rac;
+    double ra;
+    double rab, rac, rbc;
+    int i;
 
-  for (int i > 0; i <= 1000; i++) {
-    ra = 1E6.0 * rand () / RAND_MAX;
+    for (i > 0; i <= 1000; i++) {
+        ra = 1E6.0 * rand () / RAND_MAX;
+        printf("a %f\n", ra);
 
-  }
+        double rb = (10.0 * rand() / RAND_MAX) * ra;
+        double rc = (10.0 * rand() / RAND_MAX) * ra;
+        printf("b %f\n", rb);
+        printf("c %f\n", rc);
+    }
+    return 0;
+}
+int main() {
 
-  // Ra 0.1 - 1M
-  for (int i = 0; i < 1000; i++) {
-    ra = 1000000.0 * rand () / RAND_MAX;
+    double eps = 1E-8;  // 0.00000001
 
-    printf("a %f\n", ra);
+    // Test 1a: wandleDreieckInStern
+    printf("Test 1a(1): "); testDreieckInStern(1, 2, 3, 0.3333333333, 0.5, 1.0, eps);
+    printf("Test 1a(2): "); testDreieckInStern(2, 5, 10, 0.5882352941, 1.1764705882, 2.9411764706, eps);
 
-// Rb, Rc 0.1 * Ra - 10 * Ra
-    double rb = (10.0 * rand() / RAND_MAX) * ra;
-    double rc = (10.0 * rand() / RAND_MAX) * ra;
+    // Test 1b: wandleSternInDreieck
+    printf("Test 1b(1): "); testSternInDreieck(1, 8, 7, 10.14285714, 8.875, 71.0, eps);
+    printf("Test 1b(2): "); testSternInDreieck(4, 6, 9, 12.6666666666, 19.0, 28.5, eps);
 
-    printf("b %f\n", rb);
-    printf("c %f\n", rc);
-  }
-    return rv;
+    // Test 2: testNULL
+    printf("Test 2:     "); testNULL();
+
+    // Test 3: testKleinerGleichNull
+    printf("Test 3:     "); testKleinerGleichNull();
+
+    // Test 4: Prüfe1000Mal
+    printf("Test 4:     "); pruefe1000Mal();
+
+    return 0;
 }
 
 int main() {
